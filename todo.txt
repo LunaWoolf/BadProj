@@ -2,9 +2,9 @@ Grading Guide and TODO list.
 
 Grade D:
 
-There is a compiler warning in BlobStateMoving.cs. Fix it and explain (in a comment) what the problem was, and what effect it had on the game. 
+There is a compiler warning in BlobStateMoving.cs. Fix it and explain (in a comment) what the problem was, and what effect it had on the game. //
 
-GameController.score is currently a private variable with a public function (AddScore) to change score. Replace both of these things with a public property called "Score" in the GameController class. This property should have a private backing variable and the Set function should contain the code currently in AddScore.
+GameController.score is currently a private variable with a public function (AddScore) to change score. Replace both of these things with a public property called "Score" in the GameController class. This property should have a private backing variable and the Set function should contain the code currently in AddScore. 
 
 Grade C:
 Replace the Quintic/Out easing function in BlobStateShrinking with a Quartic/Out easing function.
