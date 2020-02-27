@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private float spawnTimer;
 
     // Score is added on destroying blobs
-    private int score;
+    private int _score; // baking variabl
 
     // List of all the blobs in the game.
     private List<Blob> blobList = new List<Blob>();
@@ -57,11 +57,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Add and display score.
-    public void AddScore(int scoreToAdd)
+    // public property of the score. Add and display score.
+    public int Score 
     {
-        score += scoreToAdd;
-        scoreText.text = score.ToString();
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score += 10;
+            scoreText.text = _score.ToString();
+            _score = value;
+        }
     }
 
     // Remove blob from blob list.
