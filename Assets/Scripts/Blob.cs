@@ -10,12 +10,13 @@ public class Blob : MonoBehaviour
     private BlobState currentState; // Current blob state (unique to each blob)
     private GameController controller;  // Cached connection to game controller component
     public string curstate; // keep track of the current state
+    private MeshRenderer mr;
 
     void Start()
     {
         ChangeState(new BlobStateMoving(this)); // Set initial state.
         controller = GetComponentInParent<GameController>();
-
+        mr = GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -45,5 +46,24 @@ public class Blob : MonoBehaviour
         controller.RemoveFromList(this);
         Destroy(gameObject);
         controller.Score += 10;
+    }
+
+    //blinking state start.
+    public void blinkstart()
+    {
+        StartCoroutine(blink());
+    }
+
+    //keep blinking every 0.5 second as long as the state is blinking state
+    IEnumerator blink()
+    {
+        while (curstate == "blink")
+        {
+            mr.enabled = false;
+            yield return new WaitForSeconds(0.5f);
+            mr.enabled = true;
+            yield return new WaitForSeconds(0.5f);
+        }
+      
     }
 }
