@@ -37,7 +37,7 @@ public class BlobStateMoving : BlobState
 
         if (elapsedTime > endTime)
         {
-            blob.ChangeState(new BlobStatePulsing(blob)); // Change to color pulsing state.
+            blob.ChangeState(new BlobStatePulsing(blob)); // Change to blinking state.
         }
     }
 
@@ -45,6 +45,7 @@ public class BlobStateMoving : BlobState
     //Therefore it need to declare that it override that function.
     public override void Enter() 
     {
+        blob.curstate = "move";
         base.Enter(); // Call base class.
 
         curPos = blob.transform.position;

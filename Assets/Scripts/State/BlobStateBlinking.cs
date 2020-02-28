@@ -7,8 +7,9 @@ using UnityEngine;
  * In this state, the blob will blink until player click them.*/
 public class BlobStateBlinking : BlobState
 {
-   
     private GameController controller;
+    private float elapsedTime;
+    private float endTime = 4.0f;
     public BlobStateBlinking(Blob theBlob) : base(theBlob) // Derived class constructor calls base class constructor.
     {
 
@@ -22,13 +23,22 @@ public class BlobStateBlinking : BlobState
         blob.blinkstart();
     }
 
-    public override void Run() { }
+    public override void Run()
+    {
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime > endTime)
+        {
+            blob.ChangeState(new BlobStateMoving(blob));
+        }
+
+    }
 
 
     // plus one score when leave the blinking state
     public override void Leave()
     {
-        controller.Score += 1;
+        //controller.Score += 1;
 
     }
 

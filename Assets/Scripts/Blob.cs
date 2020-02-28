@@ -37,7 +37,18 @@ public class Blob : MonoBehaviour
     {
         // if blobs is already in the shrinking state. It won't enter state again
         if (curstate != "shrink")
-            ChangeState(new BlobStateShrinking(this)); 
+        {
+            if (curstate == "blink")
+            {
+                controller.Score += 10;
+            }
+            else
+            {
+                controller.Score -= 5;
+            }
+            ChangeState(new BlobStateShrinking(this));
+        }
+           
     }
 
     // Destroy blob gameObject and remove it from master blob list.
@@ -45,7 +56,6 @@ public class Blob : MonoBehaviour
     {
         controller.RemoveFromList(this);
         Destroy(gameObject);
-        controller.Score += 10;
     }
 
     //blinking state start.
