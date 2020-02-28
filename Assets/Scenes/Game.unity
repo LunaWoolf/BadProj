@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964124, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -497,8 +497,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.68293875, g: 0.9716981, b: 0.9525232, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9528302, g: 0.7113379, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -734,10 +734,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blobPrefab: {fileID: 7578774017854333356, guid: 3c44b4727be194370a0603fa5baf9773,
     type: 3}
+  scoreText: {fileID: 966822712}
   spawnInterval: 1
   spawnDistanceMax: 2
   blobStartY: 1
-  scoreText: {fileID: 966822712}
 --- !u!4 &1037865589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3338155324636274617, guid: 4ee46d959058e43348659336ae12c327,
