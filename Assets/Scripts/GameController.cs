@@ -84,14 +84,25 @@ public class GameController : MonoBehaviour
         // Selection sort the list of blobs by y
         for (int i = 0; i < blobList.Count; i++)
         {
-            int lowest = i;
+            int curMinIndex = i;
+            float curMin = blobList[i].transform.position.y;
 
-            // TODO: Implement selection sort here!
+            for (int j = i + 1; j < blobList.Count; j++)
+            {
+                if (curMin > blobList[j].transform.position.y)
+                {
+                    curMinIndex =j;
+                    curMin = blobList[j].transform.position.y;
+                }
+            }
 
-            // Swap
-            Blob temp = blobList[i];
-            blobList[i] = blobList[lowest];
-            blobList[lowest] = temp;
+            //swap
+            if (curMinIndex != i)
+            {
+                Blob temp = blobList[i];
+                blobList[i] = blobList[curMinIndex];
+                blobList[curMinIndex] = temp;
+            }
         }
 
         // Remove the 50% of the list with the highest y value.
