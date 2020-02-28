@@ -10,7 +10,6 @@ public class BlobStatePulsing : BlobState
     // Colors
     private Color initialColor;
     private Color targetColor;
-
     // Cached
     private Renderer renderer;
 
@@ -50,5 +49,6 @@ public class BlobStatePulsing : BlobState
         initialColor = renderer.material.GetColor("_Color"); // Store the current color.
         targetColor = Random.ColorHSV(); // Get a random color.
         endTime = Random.Range(minTime, maxTime);
+        blob.curstate = "pulsing";
     }
 }

@@ -9,6 +9,7 @@ public class Blob : MonoBehaviour
 {
     private BlobState currentState; // Current blob state (unique to each blob)
     private GameController controller;  // Cached connection to game controller component
+    public string curstate; // keep track of the current state
 
     void Start()
     {
@@ -33,7 +34,9 @@ public class Blob : MonoBehaviour
     // Change blobs to shrinking state when clicked.
     void OnMouseDown()
     {
-        ChangeState(new BlobStateShrinking(this)); 
+        // if blobs is already in the shrinking state. It won't enter state again
+        if (curstate != "shrink")
+            ChangeState(new BlobStateShrinking(this)); 
     }
 
     // Destroy blob gameObject and remove it from master blob list.

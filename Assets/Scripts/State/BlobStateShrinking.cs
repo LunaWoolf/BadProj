@@ -37,6 +37,7 @@ public class BlobStateShrinking : BlobState
     {
         elapsedTime = easeOutTime;
         initialScale = blob.transform.localScale;
+        blob.curstate = "shrink";
     }
 
     /* 
