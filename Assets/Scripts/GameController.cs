@@ -66,9 +66,9 @@ public class GameController : MonoBehaviour
         }
         set
         {
-            _score += 10;
-            scoreText.text = _score.ToString();
             _score = value;
+            scoreText.text = _score.ToString();
+           
         }
     }
 
