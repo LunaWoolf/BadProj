@@ -10,13 +10,13 @@ public class Blob : MonoBehaviour
     private BlobState currentState; // Current blob state (unique to each blob)
     private GameController controller;  // Cached connection to game controller component
     public string curstate; // keep track of the current state
-    private MeshRenderer mr;
+    private Renderer mr;
 
     void Start()
     {
         ChangeState(new BlobStateMoving(this)); // Set initial state.
         controller = GetComponentInParent<GameController>();
-        mr = GetComponent<MeshRenderer>();
+        mr = GetComponent<Renderer>();
     }
 
     void Update()

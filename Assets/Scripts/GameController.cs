@@ -51,7 +51,8 @@ public class GameController : MonoBehaviour
             Vector3 startPosOffset = new Vector3(Random.Range(-spawnDistanceMax, spawnDistanceMax),
                                                  blobStartY,
                                                  Random.Range(-spawnDistanceMax, spawnDistanceMax));
-            Blob newBlob = Instantiate<Blob>(blobPrefab, transform.position + startPosOffset, Quaternion.identity);
+            // Instantiate with radom rotation
+            Blob newBlob = Instantiate<Blob>(blobPrefab, transform.position + startPosOffset, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
             newBlob.transform.parent = transform; // Set parent to be this gameObject so that the blobs can find the game controller.
             blobList.Add(newBlob);
         }
